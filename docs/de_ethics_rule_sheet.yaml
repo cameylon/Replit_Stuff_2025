@@ -1,0 +1,17 @@
+# De-Ethics compliance rules
+---
+global:
+  max_speed: 2.5  # m/s
+  safe_distance: 1.0  # meters from detected humans
+  no_go_zones:
+    - coordinates: [[-20, 10], [-15, 15]]
+      description: "Hazardous area, keep out"
+  escalation_contacts:
+    - "ops@deops.org"
+rules:
+  - id: collision_avoidance
+    description: "Maintain safe distance from all living creatures"
+    on_violation: halt
+  - id: power_threshold
+    description: "Return to base if battery < 15%"
+    on_violation: safe_return
